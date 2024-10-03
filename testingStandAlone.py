@@ -137,17 +137,18 @@ def plotAndAnimate(coords, graph, steps, startNode, endNode, finalPath, outputFi
 
 # Function to write the shortest path and distances to output.txt
 def writeOutputFile(path, dist):
-    with open('output.txt', 'w') as file:
+    with open('/app/output/output.txt', 'w') as file:
         # Write node indices
         file.write(' '.join(str(node + 1) for node in path) + '\n')  # Convert back to 1-indexed
         # Write cumulative distances
         file.write(' '.join(f'{dist[node]:.1f}' for node in path) + '\n')
 
+
 # Main function to run the entire process
 def main():
     coordsFile = 'coords.txt'
     graphFile = 'input.txt'
-    outputVideo = './dijkstraAnimation.mp4'
+    outputVideo = '/app/output/dijkstraAnimationDOCKER.mp4'
     
     # Load coordinates and graph
     coords = loadCoords(coordsFile)
